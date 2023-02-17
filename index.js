@@ -22,30 +22,42 @@ inquirer.prompt([
         name: 'tableOfContents',
     },
     {
-        type: 'raw-list',
-        message: 'Enter the sections of the contents',
-        name: 'list-of-contents',
-        when: (answers) => answers.tableOfContents === true
-    },
-    {
         type: 'input', 
-        message: 'Installation',
+        message: 'Installation Instructions',
         name: 'installation'
     },
     {
         type: 'input', 
-        message: 'Usage',
+        message: 'Usage Information',
         name: 'usage'
     },
     {
-        type: 'input', 
+        type: 'confirm', 
         message: 'License',
         name: 'license'
     },
     {
+        type: 'list',
+        message: 'Please select the type of license you would like to apply?',
+        name: 'licenseType',
+        choices: ['Apache 2.0', 'Berkeley Software Distribution OS BSD', 'GNU licenses', 'MIT License', 'Mozilla Public License 2.0'],
+        when: (answers) => answers.license === true
+    },
+    {
+        type: 'confirm',
+        message: 'Do you have any contributors?',
+        name: 'contributorsBoolean',
+    },
+    {
         type: 'input', 
-        message: 'Contributing',
-        name: 'contributing'
+        message: 'Names of Contributors',
+        name: 'contributions', 
+        when: (answers) => answers.contributorsBoolean === true
+    },
+    {
+        type: 'input',
+        message: 'contribution guidelines',
+        name: 'contributionGuidelines'
     },
     {
         type: 'input', 
@@ -54,11 +66,18 @@ inquirer.prompt([
     },
     {
         type: 'input', 
-        message: 'Questions',
-        name: 'questions'
+        message: 'For questions, please enter your username',
+        name: 'questionsUserName'
+    },
+    {
+        type: 'input', 
+        message: 'For questions, please enter your email address',
+        name: 'questionsEmail'
     },
    
-]).then((response) => console.log(response))
+]).then((response) => generateMarkdown(response))
+    .then((markdown) => fs.writeFileSync('README.md', markdown))
+    .catch((err) => console.log(err))
 const questions = [
 
 ];
