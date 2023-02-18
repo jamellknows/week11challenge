@@ -7,7 +7,6 @@
   [Installation](#installation)
   [Usage](#usage)
   [License](#license) 
-  null
   [Tests](#tests) 
   [Questions](#questions) 
   
