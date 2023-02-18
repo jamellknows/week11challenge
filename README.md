@@ -1,14 +1,14 @@
 # Week 11 Challenge - README Generator 
   ---
   ## Description
-  This is the module 11 challenege project which is a readme generator, the readme for this project was generated using the contained script. 
+  This is the module 11 challenge project which is a readme generator, the readme for this project was generated using the contained script. 
   ---
   ## Table of Contents
-  [Installation](#installation)
-  [Usage](#usage)
-  [License](#license) 
-  [Tests](#tests) 
-  [Questions](#questions) 
+  -[Installation](#installation)
+  -[Usage](#usage)
+  -[License](#license) 
+  -[Tests](#tests) 
+  -[Questions](#questions) 
   
   ---
   ## Installation 
