@@ -67,7 +67,7 @@ inquirer.prompt([
     {
         type: 'input', 
         message: 'For questions, please enter your username',
-        name: 'questionsUserName'
+        name: 'questionsUsername'
     },
     {
         type: 'input', 
@@ -76,7 +76,7 @@ inquirer.prompt([
     },
    
 ]).then((response) => generateMarkdown(response))
-    .then((markdown) => fs.writeFileSync('README.md', markdown))
+    .then((markdown) => fs.writeFileSync('./output/README.md', markdown))
     .catch((err) => console.log(err))
 const questions = [
 
