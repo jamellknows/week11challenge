@@ -1270,12 +1270,17 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 
 function writeTableOfContents(data){
   
-  let contents = `${data.installation ? "[Installation](#installation)" : null}
-  ${data.usage ? "[Usage](#usage)" : null}
-  ${data.license ? "[License](#license)" : null} 
-  ${data.contributionGuidLines ? "[Contributing](#contributing)" :null}
-  ${data.tests ? "[Tests](#tests)" : null} 
-  ${data.questionsUsername ? "[Questions](#questions)" :null} 
+  let contents = `- ${data.installation ? "[Installation](#installation)" : ""}
+
+   ${data.usage ? "-[Usage](#usage)\n" : ""}
+
+   ${data.license ? "[License](#license)\n" : ""} 
+
+   ${data.contributionGuidLines ? "[Contributing](#contributing)\n" :""}
+
+   ${data.tests ? "[Tests](#tests)\n" : ""} 
+
+   ${data.questionsUsername ? "[Questions](#questions)\n" :""} 
   `
   return contents
 }
